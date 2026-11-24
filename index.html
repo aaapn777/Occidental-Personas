@@ -3,23 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Demostración independiente de una página de acceso a un enlace externo.">
 <meta name="robots" content="noindex,nofollow">
-<title>Demostración de acceso externo</title>
-<link rel="stylesheet" href="/styles.css">
+<title>Demostración de enlace externo</title>
+<style>
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:white;font-family:system-ui,sans-serif}
+a{display:inline-block;padding:16px 28px;border-radius:10px;background:#235ab4;color:white;text-decoration:none;font-weight:600;text-align:center}
+a:hover,a:focus-visible{background:#174481}
+</style>
 </head>
 <body>
-<main class="shell">
-<section class="panel" aria-labelledby="heading">
-<div class="symbol" aria-hidden="true">↗</div>
-<p class="eyebrow">ENTORNO DE DEMOSTRACIÓN</p>
-<h1 id="heading">Continuar a un sitio externo</h1>
-<p class="intro">Esta es una página de prueba independiente para demostrar un enlace de salida. No representa a una empresa de mensajería, entidad financiera ni otra organización.</p>
-<div class="destination"><span>Destino provisional</span><strong>example.com</strong></div>
-<a class="button" href="https://example.com/" rel="noopener noreferrer">Continuar a example.com <span aria-hidden="true">↗</span></a>
-<p class="note">No recopilamos información personal ni solicitamos contraseñas. El destino se muestra antes de continuar.</p>
-</section>
-<footer>Proyecto de prueba · Enlace externo transparente</footer>
-</main>
+<a href="https://example.com/" rel="noopener noreferrer">Continuar a example.com</a>
 </body>
 </html>
