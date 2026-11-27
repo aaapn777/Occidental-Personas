@@ -3,16 +3,85 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <title>Continuar a un sitio externo</title>
+  <meta name="description" content="Reparaciones Occidente: página informativa de servicios de diagnóstico, mantenimiento y reparación.">
+  <title>Reparaciones Occidente | Servicios de reparación</title>
   <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; background: #ffffff; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
-    a { display: inline-block; max-width: 100%; text-align: center; background: #e95b08; color: #fff; padding: 15px 30px; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; }
-    a:hover, a:focus-visible { background: #bc4800; }
+  :root{--ink:#141e33;--sub:#64748b;--blue:#079ee0;--blue2:#008ac8;--pale:#eefaff;--line:#e4edf3}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#fff}
+  a{color:inherit;text-decoration:none}button{font:inherit}
+  .container{width:min(1180px,calc(100% - 48px));margin:auto}
+  header{height:78px;display:flex;align-items:center;border-bottom:1px solid #eaf0f4;background:white;position:sticky;top:0;z-index:3}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:28px}
+  .brand{display:flex;align-items:center;gap:12px;font-size:21px;font-weight:850;letter-spacing:-.8px;white-space:nowrap}
+  .brand-mark{height:42px;width:42px;background:linear-gradient(135deg,#00aff0,#0783c4);border-radius:10px;display:grid;place-items:center;color:#fff;font-size:24px}
+  nav{display:flex;align-items:center;gap:30px;font-size:14px;color:#5f718e;font-weight:600}
+  nav a:hover,nav a:focus-visible{color:var(--blue2)}
+  .nav-cta{font-size:14px;font-weight:750;color:var(--blue2);background:#eff9ff;border:1px solid #caeaff;padding:12px 16px;border-radius:9px}
+  .hero{background:linear-gradient(115deg,#fff 14%,#f6fcff 62%,#eaf8ff 100%);padding:92px 0 86px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr 0.9fr;align-items:center;gap:72px}
+  .eyebrow{display:inline-block;color:#fff;background:var(--blue);padding:12px 18px;border-radius:6px;font-size:13px;font-weight:750;margin-bottom:25px}
+  h1{font-size:clamp(42px,4.4vw,63px);line-height:1.075;letter-spacing:-2.2px;margin:0 0 27px;font-weight:840;max-width:670px}
+  h1 span{color:var(--blue)}
+  .lead{font-size:18px;line-height:1.72;color:var(--sub);max-width:610px;margin:0 0 29px}
+  .actions{display:flex;flex-wrap:wrap;gap:14px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 25px;border-radius:8px;font-size:15px;font-weight:760;transition:.2s}
+  .btn-primary{background:var(--blue);color:white;box-shadow:0 4px 12px #0599de2b}.btn-primary:hover{background:#0083c0}
+  .btn-light{background:#fff;border:1px solid #dfe7ee}.btn-light:hover{background:#f3f9fc}
+  .hero-illustration{width:100%;aspect-ratio:1.26;min-height:340px;background:linear-gradient(145deg,#dff3ff,#bce9ff);border-radius:24px;display:grid;place-items:center;box-shadow:0 20px 48px #1e57781b}
+  .hero-illustration svg{width:43%;max-width:180px;height:auto}
+  .highlight{border-top:1px solid var(--line);margin-top:45px;padding-top:25px;display:flex;gap:28px;color:#65778c;font-size:14px;flex-wrap:wrap}
+  .highlight span{display:flex;align-items:center;gap:8px}.highlight b{font-size:20px;color:var(--blue);font-weight:850}
+  section.content{padding:84px 0}
+  .section-kicker{color:var(--blue2);font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:820;margin:0 0 12px}
+  h2{font-size:clamp(29px,3.2vw,40px);letter-spacing:-1.2px;margin:0 0 16px}
+  .section-intro{color:var(--sub);font-size:16px;line-height:1.7;max-width:680px;margin:0 0 35px}
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .service{padding:28px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 7px 22px #143c5910}
+  .service .emoji{font-size:30px;margin-bottom:18px}.service h3{font-size:20px;margin:0 0 12px}.service p{color:var(--sub);line-height:1.65;font-size:14px;margin:0}
+  .soft{background:#f4fbff}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .step{background:white;border-radius:16px;padding:25px;border:1px solid var(--line)}.step strong{color:var(--blue);font-size:28px}.step h3{margin:14px 0 7px}.step p{color:var(--sub);line-height:1.6;font-size:14px}
+  .contact{background:#eaf8ff;border-radius:23px;padding:45px;display:flex;align-items:center;justify-content:space-between;gap:32px}.contact p{color:var(--sub);line-height:1.6;margin:0}.contact h2{margin-bottom:12px}.contact .btn{white-space:nowrap}
+  footer{border-top:1px solid var(--line);padding:28px 0;color:#7b8ba0;font-size:13px}
+  .footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  @media(max-width:850px){nav{gap:14px;flex-wrap:wrap;justify-content:center}.nav-cta{display:none}.hero-grid{grid-template-columns:1fr;gap:42px}.hero{padding:65px 0}.hero-illustration{min-height:280px}.services,.steps{grid-template-columns:1fr}.contact{flex-direction:column;align-items:start}}
+  @media(max-width:580px){.container{width:min(100% - 32px,1180px)}header{height:auto;min-height:72px;padding:15px 0}.header-inner{flex-direction:column;gap:14px}.brand{font-size:19px}nav{font-size:12px;gap:13px}.hero{padding:44px 0 62px}h1{letter-spacing:-1.4px;font-size:39px}.lead{font-size:16px}.hero-illustration{min-height:220px}.highlight{gap:16px}.contact{padding:28px}.actions .btn{flex:1}}
   </style>
 </head>
 <body>
-  <a href="https://occidenteacceso.com/" rel="noopener noreferrer">Continuar a occidenteacceso.com/</a>
+<header id="inicio"><div class="container header-inner">
+  <a class="brand" href="#inicio" aria-label="Reparaciones Occidente, inicio"><span class="brand-mark" aria-hidden="true">⚒</span><span>Reparaciones Occidente</span></a>
+  <nav aria-label="Navegación principal"><a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#proceso">Cómo trabajamos</a><a href="#contacto">Contacto</a></nav>
+  <a class="nav-cta" href="#contacto">Consultar atención</a>
+</div></header>
+<main>
+<section class="hero"><div class="container hero-grid">
+  <div>
+    <span class="eyebrow">Soluciones de mantenimiento y reparación</span>
+    <h1>Reparaciones y <span>mantenimiento</span> con atención cercana</h1>
+    <p class="lead">En Reparaciones Occidente queremos ayudarte a encontrar soluciones para tus necesidades de reparación. Conoce nuestros servicios y consulta los detalles de atención.</p>
+    <div class="actions"><a class="btn btn-primary" href="#contacto">Consultar servicio ↗</a><a class="btn btn-light" href="#servicios">Ver servicios</a></div>
+    <div class="highlight"><span><b>✓</b> Información clara</span><span><b>✓</b> Atención personalizada</span><span><b>✓</b> Consulta de servicios</span></div>
+  </div>
+  <div class="hero-illustration" role="img" aria-label="Ilustración de herramientas para reparaciones">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M140 28a49 49 0 0 0-57 61l-48 48a23 23 0 0 0 32 32l48-48a49 49 0 0 0 61-57l-31 31-30-10-10-30 35-27Z" fill="#39c5ef" stroke="#10213c" stroke-width="10" stroke-linejoin="round"/><circle cx="52" cy="153" r="7" fill="#10213c"/></svg>
+  </div>
+</div></section>
+<section class="content" id="servicios"><div class="container"><p class="section-kicker">Nuestros servicios</p><h2>Soluciones para tus necesidades</h2><p class="section-intro">Conoce las áreas de servicio que esta página presenta. La disponibilidad y el alcance de cada reparación deben confirmarse antes de solicitar atención.</p>
+  <div class="services">
+    <article class="service"><div class="emoji" aria-hidden="true">🔎</div><h3>Revisión y diagnóstico</h3><p>Evaluación inicial del problema para identificar opciones de solución.</p></article>
+    <article class="service"><div class="emoji" aria-hidden="true">🛠️</div><h3>Reparaciones</h3><p>Orientación sobre trabajos de reparación según el tipo de equipo o instalación.</p></article>
+    <article class="service"><div class="emoji" aria-hidden="true">⚙️</div><h3>Mantenimiento</h3><p>Información sobre mantenimiento preventivo y correctivo, sujeto a disponibilidad.</p></article>
+  </div>
+</div></section>
+<section class="content soft" id="proceso"><div class="container"><p class="section-kicker">Cómo trabajamos</p><h2>Un proceso sencillo</h2><p class="section-intro">Estos son los pasos sugeridos para gestionar una consulta de reparación.</p>
+  <div class="steps">
+    <article class="step"><strong>01</strong><h3>Cuéntanos tu necesidad</h3><p>Describe el equipo o la instalación que requiere revisión.</p></article>
+    <article class="step"><strong>02</strong><h3>Revisamos la solicitud</h3><p>Se confirma si el servicio requerido está disponible.</p></article>
+    <article class="step"><strong>03</strong><h3>Coordinamos la atención</h3><p>Los detalles del servicio se acuerdan antes de realizar trabajos.</p></article>
+  </div>
+</div></section>
+<section class="content" id="contacto"><div class="container"><div class="contact"><div><p class="section-kicker">Contacto</p><h2>¿Necesitas una reparación?</h2><p>Los canales de contacto oficiales se publicarán aquí cuando estén confirmados. Esta página no solicita información personal ni pagos.</p></div><a href="#servicios" class="btn btn-primary">Explorar servicios</a></div></div></section>
+</main>
+<footer><div class="container footer-inner"><span>© Reparaciones Occidente · Página informativa</span><span>Sin formularios de pago ni captura de datos personales</span></div></footer>
 </body>
 </html>
